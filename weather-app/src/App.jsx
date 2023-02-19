@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
 import CurrentWeather from './components/CurrentWeather'
+import DailyWeather from './components/DailyWeather'
 
 function App() {
   const [current, setCurrent] = useState([])
@@ -40,10 +41,15 @@ function App() {
     setCurrent(res.data)
   })
  })
+ const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+ 
+
   return (
     <div className="App">
-      <CurrentWeather data={current}/>
-      <button onClick={()=>console.log(current)}>clic</button>
+      <CurrentWeather data={current} days={days} />
+      <button onClick={()=>console.log(new Date().getDay())}>clic</button>
+      <DailyWeather data={current} days={days}/>
     </div>
   )
 }
