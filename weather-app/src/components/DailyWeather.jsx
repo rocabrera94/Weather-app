@@ -1,6 +1,6 @@
 
 import React from 'react'
-
+import moon from '../icons/moon-solid.svg'
 const DailyWeather = ({data}) => {
     //let day = today.toLocaleString('en-us', {weekday: 'long'});
     Date.prototype.addDays = function(days) {
@@ -30,9 +30,17 @@ const DailyWeather = ({data}) => {
     <div>
       <div>
         <button onClick={()=>console.log(app_temp_max[0], app_temp_min[0], precip[0], temp_2m_max[0], temp_2m_min[0])}>daily</button>
-        {data?.daily?.apparent_temperature_max.map((max)=>{
-          return <div key={week[max]}>
-                    {max}
+        {week.map((day)=>{
+          return <div key={week[day]}>
+                    <img src={moon} alt='moon' className='daily_icon'/>
+                    <p className='day'>{day}</p>
+                    <div className='daily_temps'>
+                      <p>{data?.daily?.temperature_2m_max[week.findIndex((el)=>el==day)]}</p>
+                      <p>{data?.daily?.temperature_2m_min[week.findIndex((el)=>el==day)]}</p>
+                    </div>
+                    
+
+
                 </div>
         })}
       </div>
