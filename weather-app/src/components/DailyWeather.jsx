@@ -29,8 +29,7 @@ const DailyWeather = ({data}) => {
 
   return (
     <div>
-        <button onClick={()=>console.log(app_temp_max, app_temp_min, precip,temp_2m_max,temp_2m_min)}>data</button>
-        
+       <div>DailyWeather</div> 
     </div>
   )
 }

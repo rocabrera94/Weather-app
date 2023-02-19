@@ -1,5 +1,5 @@
 .container{
-    outline: 1px solid black;
+    
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -7,7 +7,6 @@
 }
 
 .main{
-    outline: 1px solid red;
     margin: 5px;
     display: flex;
     justify-content: center;
@@ -28,7 +27,7 @@
 }
 
 .minmax_temps{
-    outline:1px solid green;
+    
     display: flex;
     width: 400px;
     justify-content: center;
@@ -37,12 +36,12 @@
 }
 
 .minmax{
-    outline:1px solid red;
+   
     margin: 10px;
 }
 
 .app{
-    outline: 1px solid blue;
+    
     margin: 10px;
     text-align: left;
 }
