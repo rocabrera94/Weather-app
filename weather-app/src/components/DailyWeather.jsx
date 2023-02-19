@@ -20,16 +20,22 @@ const DailyWeather = ({data}) => {
     } 
     weekDays()
     
-    let daily = data.daily
-    let app_temp_max = daily.apparent_temperature_max
-    let app_temp_min = daily.apparent_temperature_min
-    let precip = daily.precipitation_sum
-    let temp_2m_max = daily.temperature_2m_max
-    let temp_2m_min = daily.temperature_2m_min
-
+    //let app_temp_max = data?.daily.apparent_temperature_max
+    //let app_temp_min = data?.daily.apparent_temperature_min
+    //let precip = data?.daily.precipitation_sum
+    //let temp_2m_max = data?.daily.temperature_2m_max
+    //let temp_2m_min = data?.daily.temperature_2m_min
+    
   return (
     <div>
-       <div>DailyWeather</div> 
+      <div>
+        <button onClick={()=>console.log(app_temp_max[0], app_temp_min[0], precip[0], temp_2m_max[0], temp_2m_min[0])}>daily</button>
+        {data?.daily?.apparent_temperature_max.map((max)=>{
+          return <div key={week[max]}>
+                    {max}
+                </div>
+        })}
+      </div>
     </div>
   )
 }

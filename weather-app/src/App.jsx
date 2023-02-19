@@ -41,15 +41,14 @@ function App() {
     setCurrent(res.data)
   })
  })
- const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
  
 
   return (
     <div className="App">
-      <CurrentWeather data={current} days={days} />
+      <CurrentWeather data={current}  />
       <button onClick={()=>console.log(new Date().getDay())}>clic</button>
-      <DailyWeather data={current} days={days}/>
+      <DailyWeather data={current} />
     </div>
   )
 }
