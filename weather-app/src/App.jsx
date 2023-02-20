@@ -3,6 +3,7 @@ import axios from 'axios'
 import './App.css'
 import CurrentWeather from './components/CurrentWeather'
 import DailyWeather from './components/DailyWeather'
+import HourlyWeather from './components/HourlyWeather'
 
 function App() {
   const [current, setCurrent] = useState([])
@@ -47,8 +48,8 @@ function App() {
   return (
     <div className="App">
       <CurrentWeather data={current}  />
-      <button onClick={()=>console.log(new Date().getDay())}>clic</button>
       <DailyWeather data={current} />
+      <HourlyWeather data={current} />
     </div>
   )
 }

@@ -26,10 +26,11 @@ const DailyWeather = ({data}) => {
     
   return (
     <div>
-      <div>
-        <button onClick={()=>console.log(app_temp_max[0], app_temp_min[0], precip[0], temp_2m_max[0], temp_2m_min[0])}>daily</button>
+      <button onClick={()=>console.log(app_temp_max[0], app_temp_min[0], precip[0], temp_2m_max[0], temp_2m_min[0])}>daily</button>
+
+      <div className='main_container'>
         {week.map((day)=>{
-          return <div key={week[day]} className='daily_container'>
+          return <div key={day} className='daily_container'>
                     <img src={moon} alt='moon' className='daily_icon'/>
                     <p className='daily_day'>{day}</p>
                     <div className='daily_temps'>
