@@ -1,5 +1,6 @@
 
 import React from 'react'
+import HourlyWeather from './HourlyWeather'
 import moon from '../icons/moon-solid.svg'
 import '../styles/DailyWeather.css'
 
@@ -37,12 +38,10 @@ const DailyWeather = ({data}) => {
                       <p>{data?.daily?.temperature_2m_max[week.findIndex((el)=>el==day)]}°C</p>
                       <p>{data?.daily?.temperature_2m_min[week.findIndex((el)=>el==day)]}°C</p>
                     </div>
-                    
-
-
                 </div>
         })}
       </div>
+      <HourlyWeather data={data} weekdays={weekDays} date={date} week={week} />
     </div>
   )
 }

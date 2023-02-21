@@ -49,7 +49,7 @@ function App() {
     <div className="App">
       <CurrentWeather data={current}  />
       <DailyWeather data={current} />
-      <HourlyWeather data={current} />
+      
     </div>
   )
 }
