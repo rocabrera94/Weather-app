@@ -1,16 +1,20 @@
 import React from 'react'
-
-const HourlyWeather = ({data, weekDays, week}) => {
+import '../styles/HourlyWeather.css'
+import moon from '../icons/moon-solid.svg'
+const HourlyWeather = ({ data }) => {
   return (
-      <div>
-          <button onClick={()=>console.log(data.hourly)}>data</button> 
+      <div className='hourly_container'>
+          
           {data?.hourly?.time?.slice(0,23).map((hour)=>{
-           return <div key={hour}>
-                    <p>time:{new Date(hour * 1000).getUTCHours().toString().padStart(2,'0')}</p>
-                    <p>{data?.hourly?.temperature_2m?.[data.hourly.time.findIndex((el)=>el==hour)]}°C</p>
+           return <div key={hour} className='hourly_box'>
+                    <p className='hourly_time' >{new Date(hour * 1000).getUTCHours().toString().padStart(2,'0')}hs</p>
+                    <div className='img_and_temp'>
+                        <img src={moon} alt='icon' className='hourly_icon'/>
+                        <p className='hourly_temp'>{data?.hourly?.temperature_2m?.[data.hourly.time.findIndex((el)=>el==hour)]}°C</p>
+                    </div>
                   </div> 
           })}
-          
+           
     </div>
   )
 } 
