@@ -3,18 +3,19 @@ import '../styles/HourlyWeather.css'
 import moon from '../icons/moon-solid.svg'
 const HourlyWeather = ({ data, date }) => {
     
-    let followingHours = date.getHours()+24
+    let followingHours = date.getHours()+25
     let arr = []
     let hours = () =>{
-        for (let i=0;i<24;i++){
+        for (let i=1;i<25;i++){
+            let a=0
             if (date.getHours()+i<25){
                 arr.push(date.getHours()+i)
-            } else{
-                for (let a=0;a<arr.length-1;a++) {
-                    arr.push(a)
-                     
+            }  else{
+                for (a;a<25;a++){
+                    arr.push(a) 
                 }
-            }
+            } 
+            
         }
         return arr
     }
