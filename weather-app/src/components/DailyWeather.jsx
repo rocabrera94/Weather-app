@@ -39,7 +39,7 @@ const DailyWeather = ({data}) => {
                 </div>
         })}
       </div>
-      <HourlyWeather data={data} weekdays={weekDays} date={date} week={week} />
+      
     </div>
   )
 }

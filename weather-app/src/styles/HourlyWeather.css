@@ -1,24 +1,28 @@
 .hourly_container{
     width: 80vw;
     outline: auto;
+    display: flex;
 
 }
 
 .hourly_box{
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     outline: auto;
+    flex-direction: column;
+    height: 15vh;
+    justify-content: space-evenly;
 }
 
 .hourly_time{
     font-size: 20px;
     font-weight: bold;
+    
 }
 
 .img_and_temp{
-    width: 80vw; 
-    height: 10vh;
+    width: 5vw; 
+    
     display: flex;
     flex-direction: column;
     justify-content: center;

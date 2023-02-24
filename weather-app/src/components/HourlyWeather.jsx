@@ -1,8 +1,8 @@
 import React from 'react'
 import '../styles/HourlyWeather.css'
 import moon from '../icons/moon-solid.svg'
-const HourlyWeather = ({ data, date }) => {
-    
+const HourlyWeather = ({ data }) => {
+    let date = new Date(); 
     let followingHours = date.getHours()+25
     let arr = []
     let hours = () =>{
@@ -22,7 +22,7 @@ const HourlyWeather = ({ data, date }) => {
     hours()
   return (
       <div className='hourly_container'>
-          <button onClick={()=>console.log(arr)}>hour</button>
+         
           {data?.hourly?.time?.slice(date.getHours(),followingHours).map((hour, index)=>{
            return <div key={hour} className='hourly_box'>
                     <p className='hourly_time' >{/*  new Date(hour * 1000).getUTCHours().toString().padStart(2,'0')  */arr[index]}hs</p>

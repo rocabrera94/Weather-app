@@ -48,6 +48,7 @@ function App() {
   return (
     <div className="App">
       <CurrentWeather data={current}  />
+      <HourlyWeather data={current}  />
       <DailyWeather data={current} />
       
     </div>
